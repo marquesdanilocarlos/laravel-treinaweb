@@ -33,4 +33,22 @@ class ClientController extends Controller
             route('clients.index')
         );
     }
+
+    public function edit(int $id)
+    {
+        $client = Client::find($id);
+        return view("app.clients.edit", compact('client'));
+    }
+
+    public function update(int $id, Request $request)
+    {
+        $client = Client::find($id);
+        $data = $request->all();
+
+        $client->update($data);
+
+        return redirect(
+            route('clients.index')
+        );
+    }
 }
