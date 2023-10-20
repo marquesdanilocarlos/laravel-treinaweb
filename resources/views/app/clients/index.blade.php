@@ -21,6 +21,17 @@
                 <td>{{$client->address}}</td>
                 <td>
                     <a href="{{route("clients.edit", $client)}}" class="btn btn-primary">Editar</a>
+                    <form action="{{route("clients.destroy", $client)}}" method="POST">
+                        @csrf
+                        @method("DELETE")
+                        <button
+                            class="btn btn-danger mt-2"
+                            type="submit"
+                            onclick="return confirm('Deseja realmente deletar o cliente?')"
+                        >
+                            Deletar
+                        </button>
+                    </form>
                 </td>
             </tr>
         @endforeach

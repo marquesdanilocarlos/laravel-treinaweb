@@ -29,4 +29,5 @@ Route::get("/clientes/{id}", [ClientController::class, 'show'])->name("clients.s
 Route::get("/clientes/{id}/edit", [ClientController::class, 'edit'])->name("clients.edit");
 Route::put("/clientes/{id}", [ClientController::class, 'update'])->name("clients.update");
 Route::post("/clientes", [ClientController::class, "store"])->name("clients.store");
+Route::delete("/clientes/{id}", [ClientController::class, "destroy"])->name("clients.destroy");
 
