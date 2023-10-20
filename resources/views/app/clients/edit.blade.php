@@ -9,16 +9,16 @@
         @method("PUT")
         <div class="mb-3">
             <label for="name" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="name" name="name" value="{{$client->name}}">
+            <input type="text" class="form-control" id="name" name="name" value="{{$client->name}}" required>
         </div>
         <div class="mb-3">
             <label for="address" class="form-label">Endereço</label>
-            <input type="text" class="form-control" id="address" name="address" value="{{$client->address}}">
+            <input type="text" class="form-control" id="address" name="address" value="{{$client->address}}" required>
         </div>
         <div class="mb-3">
             <label for="observation" class="form-label">Observação</label>
             <textarea class="form-control" id="observation" rows="3"
-                      name="observation">{{$client->observation}}</textarea>
+                      name="observation" required>{{$client->observation}}</textarea>
         </div>
         <button class="btn btn-primary">
             Enviar
