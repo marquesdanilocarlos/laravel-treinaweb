@@ -47,6 +47,6 @@ class SiteController extends Controller
             ]
         ];
 
-        echo $services[$id]["name"] ?? $services[$name]["name"];
+        return view("site.service", compact('services', 'id', 'name'));
     }
 }
