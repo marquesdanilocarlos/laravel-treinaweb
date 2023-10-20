@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Listagem de clientes</title>
+    <title>Detalhes do cliente</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
@@ -16,27 +16,16 @@
 </nav>
 
 <div class="container">
-    <h1>Lista de clientes</h1>
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Nome</th>
-            <th scope="col">Endereço</th>
-            <th scope="col">Ações</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach($clients as $client)
-            <tr>
-                <th scope="row">{{$client->id}}</th>
-                <td><a href="{{route("clients.show", $client)}}">{{$client->name}}</a></td>
-                <td>{{$client->address}}</td>
-                <td></td>
-            </tr>
-        @endforeach
-        </tbody>
-    </table>
+    <div class="card">
+        <h5 class="card-header">Detalhes do cliente {{$client->name}}</h5>
+        <div class="card-body">
+            <p class="card-text"><strong>ID:</strong> {{$client->id}}</p>
+            <p class="card-text"><strong>Nome:</strong> {{$client->name}}</p>
+            <p class="card-text"><strong>Endereço:</strong> {{$client->address}}</p>
+            <p class="card-text"><strong>Observação:</strong> {{$client->observation}}</p>
+            <a href="{{route("clients.index")}}" class="btn btn-primary">Voltar</a>
+        </div>
+    </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
