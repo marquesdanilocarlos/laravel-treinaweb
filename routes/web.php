@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\Site\GreetingController;
 use App\Http\Controllers\Site\SiteController;
 use App\Models\Client;
@@ -23,6 +24,4 @@ Route::get('/contato', [SiteController::class, 'contact']);
 Route::get('/sobre', [SiteController::class, 'about']);
 Route::get('/saudacao/{name}', GreetingController::class);
 
-Route::get("/clientes", function(){
-    return Client::all();
-});
+Route::get("/clientes", [ClientController::class, 'index']);
