@@ -1,29 +1,29 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Site;
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class SiteController extends Controller
 {
     public function index()
     {
-        return "Conteúdo Home";
+        return view("site.index");
     }
 
     public function about()
     {
-        return "Conteúdo Sobre";
+        return view("site.about");
     }
 
     public function contact()
     {
-        return "Conteúdo Contato";
+        return view("site.contact");
     }
 
     public function services()
     {
-        return "Conteúdo Serviços";
+        return view("site.services");
     }
 
     public function service(int $id, string $name = null)

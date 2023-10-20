@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\GreetingController;
-use App\Http\Controllers\SiteController;
+use App\Http\Controllers\Site\GreetingController;
+use App\Http\Controllers\Site\SiteController;
 use Illuminate\Support\Facades\Route;
 
 /*
