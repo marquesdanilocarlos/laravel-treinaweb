@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GreetingController;
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,3 +20,4 @@ Route::get('/servicos', [SiteController::class, 'services']);
 Route::get('/servico/{id}/{name?}', [SiteController::class, 'service']);
 Route::get('/contato', [SiteController::class, 'contact']);
 Route::get('/sobre', [SiteController::class, 'about']);
+Route::get('/saudacao/{name}', GreetingController::class);
