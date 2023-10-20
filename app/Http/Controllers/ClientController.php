@@ -18,4 +18,19 @@ class ClientController extends Controller
         $client = Client::find($id);
         return view("app.clients.show", compact('client'));
     }
+
+    public function create()
+    {
+        return view("app.clients.create");
+    }
+
+    public function store(Request $request)
+    {
+        $data = $request->all();
+        Client::create($data);
+
+        return redirect(
+            route('clients.index')
+        );
+    }
 }

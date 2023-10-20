@@ -25,4 +25,7 @@ Route::get("/sobre", [SiteController::class, "about"]);
 Route::get("/saudacao/{name}", GreetingController::class);
 
 Route::get("/clientes", [ClientController::class, 'index'])->name("clients.index");
+Route::get("/clientes/create", [ClientController::class, 'create'])->name("clients.create");
 Route::get("/clientes/{id}", [ClientController::class, 'show'])->name("clients.show");
+Route::post("/clientes", [ClientController::class, "store"])->name("clients.store");
+
