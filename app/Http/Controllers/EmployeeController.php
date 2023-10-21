@@ -139,4 +139,17 @@ class EmployeeController extends Controller
 
         dd($employee->address()->create($addressData));
     }
+
+    public function projects()
+    {
+        $employee = Employee::find(1);
+        $projects = $employee->projects()->get();
+        dump($projects);
+
+        dump($employee->projects()->attach(4));
+        dump($employee->projects()->detach(4));
+
+        dump($employee->projects()->sync([2,4]));
+
+    }
 }
