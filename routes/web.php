@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\Site\SiteController;
 use Illuminate\Support\Facades\Route;
@@ -33,3 +34,5 @@ Route::delete("/clientes/{id}", [ClientController::class, "destroy"])->name("cli
 Route::resource('/clients', ClientController::class);
 Route::resource('/services', ServiceController::class);
 
+
+Route::get("/funcionarios", EmployeeController::class);
