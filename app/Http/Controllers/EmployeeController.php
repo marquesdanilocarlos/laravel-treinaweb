@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Employee;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class EmployeeController extends Controller
 {
@@ -19,14 +20,24 @@ class EmployeeController extends Controller
         //$employees = $employees->toArray();
         //$employees = $employees->toJson();
         //$employees = $employees->pop();
-
         dump($employees);
 
         $numeros = [3,1,7,5,4,9];
         $numeros = collect($numeros)->sort();
-
         dump($numeros);
 
-        //var_dump($employees);
+
+        $employees = DB::table('employees')
+            ->select('name', 'cpf')
+            ->where('name', 'Danilo')
+            ->get();
+
+        $employees = DB::table('employees')
+            ->select('name', 'cpf')
+            ->where('cpf','LIKE', '%4%')
+            ->orderBy('cpf', 'desc')
+            ->get();
+
+        dump($employees);
     }
 }
