@@ -65,6 +65,7 @@ class EmployeeController extends Controller
 
     public function mass()
     {
+        //Inclusão
         $data = [
             '_token' => 'aj55kdhf54asiu85',
             'name' => 'Carmissa',
@@ -73,6 +74,14 @@ class EmployeeController extends Controller
         ];
 
         dump(Employee::create($data));
+
+        //Update
+        dump(
+            Employee::where('hiring_date', '2023-10-21')->update(['resignation_date' => '2023-11-01'])
+        );
+
+        //Delete
+        Employee::destroy([5,6]);
     }
 
     public function delete()
