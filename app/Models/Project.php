@@ -9,6 +9,8 @@ class Project extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name', 'budget', 'start_date', 'final_date'];
+
     public function client()
     {
         return $this->belongsTo(Client::class);

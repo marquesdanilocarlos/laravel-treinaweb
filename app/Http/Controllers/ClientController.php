@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Client;
+use App\Models\Project;
 use Exception;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -70,12 +71,47 @@ class ClientController extends Controller
         /**
          * Leitura
          */
-        $client = $client = Client::findOrFail(2);
-        dump($client->projects()->get());
+        $client = Client::findOrFail(1);
+        //dump($client->projects()->get());
 
         /**
          * Inserção
          */
+        /*$firstProject = new Project();
+        $firstProject->name = 'Primeiro projeto';
+        $firstProject->budget = 13000;
+        $firstProject->start_date = '2023-07-01';
+        $firstProject->final_date = '2023-09-01';
 
+        $secondProject = new Project();
+        $secondProject->name = 'Segundo projeto';
+        $secondProject->budget = 17500;
+        $secondProject->start_date = '2023-03-01';
+        $secondProject->final_date = '2023-05-01';
+
+
+
+        dump($client->projects()->saveMany([$firstProject,$secondProject]));
+
+        $client = Client::findOrFail(1);
+
+        $projectsData = [
+            [
+                'name' => 'Terceiro projeto',
+                'budget' => 23640,
+                'start_date' => '2020-08-13',
+                'final_date' => '2021-08-13',
+            ],
+            [
+                'name' => 'Quarto projeto',
+                'budget' => 36532,
+                'start_date' => '2020-01-25',
+                'final_date' => '2021-02-28',
+            ],
+        ];
+
+        dump($client->projects()->createMany($projectsData));*/
+
+        dump($client->projects()->where('budget', 23640)->get());
     }
 }
