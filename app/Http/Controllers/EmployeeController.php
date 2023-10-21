@@ -105,7 +105,11 @@ class EmployeeController extends Controller
 
         $employees = Employee::where('name', 'LIKE', '%a%')->orderBy('id', 'DESC')->get();
         dump($employees);
+    }
 
-
+    public function hasOne()
+    {
+        $employee = Employee::find(1);
+        dump($employee->address()->first());
     }
 }
