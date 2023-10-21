@@ -42,3 +42,4 @@ Route::get("/funcionarios/remocao", [EmployeeController::class, 'delete']);
 Route::get("/funcionarios/alteracao", [EmployeeController::class, 'update']);
 Route::get("/funcionarios/massa", [EmployeeController::class, 'mass']);
 Route::get("/funcionarios/um-pra-um", [EmployeeController::class, 'hasOne']);
+Route::get("/funcionarios/insercao-pela-relacao", [EmployeeController::class, 'relationInsert']);

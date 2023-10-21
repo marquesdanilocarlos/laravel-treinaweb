@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Address;
 use App\Models\Employee;
 use Exception;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -111,5 +112,31 @@ class EmployeeController extends Controller
     {
         $employee = Employee::find(1);
         dump($employee->address()->first());
+    }
+
+    public function relationInsert()
+    {
+        $employee = Employee::findOrFail(4);
+
+        /*$address = new Address();
+        $address->address = "Rua teste";
+        $address->number = 10;
+        $address->neighborhood = "Setor Sul";
+        $address->city = "Cidade monstra";
+        $address->zipcode = 75123645;
+        $address->state = "DF";
+
+        dd($employee->address()->save($address));*/
+
+        $addressData = [
+            'address' => 'Rua Marota',
+            'number' => 33,
+            'neighborhood' => 'Bairo do nada',
+            'city' => 'Anápolis',
+            'zipcode' => 72546313,
+            'state' => 'TO'
+        ];
+
+        dd($employee->address()->create($addressData));
     }
 }
