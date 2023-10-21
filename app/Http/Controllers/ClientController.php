@@ -77,7 +77,7 @@ class ClientController extends Controller
         /**
          * Inserção
          */
-        /*$firstProject = new Project();
+        $firstProject = new Project();
         $firstProject->name = 'Primeiro projeto';
         $firstProject->budget = 13000;
         $firstProject->start_date = '2023-07-01';
@@ -110,7 +110,7 @@ class ClientController extends Controller
             ],
         ];
 
-        dump($client->projects()->createMany($projectsData));*/
+        dump($client->projects()->createMany($projectsData));
 
         dump($client->projects()->where('budget', 23640)->get());
     }
