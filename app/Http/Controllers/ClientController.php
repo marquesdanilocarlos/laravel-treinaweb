@@ -64,4 +64,18 @@ class ClientController extends Controller
             route('clients.index')
         );
     }
+
+    public function relations()
+    {
+        /**
+         * Leitura
+         */
+        $client = $client = Client::findOrFail(2);
+        dump($client->projects()->get());
+
+        /**
+         * Inserção
+         */
+
+    }
 }

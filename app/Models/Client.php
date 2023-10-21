@@ -14,4 +14,9 @@ class Client extends Model
         'address',
         'observation',
     ];
+
+    public function projects()
+    {
+        return $this->hasMany(Project::class);
+    }
 }

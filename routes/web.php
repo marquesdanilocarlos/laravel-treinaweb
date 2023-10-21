@@ -31,6 +31,7 @@ Route::put("/clientes/{id}", [ClientController::class, 'update'])->name("clients
 Route::post("/clientes", [ClientController::class, "store"])->name("clients.store");
 Route::delete("/clientes/{id}", [ClientController::class, "destroy"])->name("clients.destroy");*/
 
+Route::get("/clients/relacoes", [ClientController::class, 'relations']);
 Route::resource('/clients', ClientController::class);
 Route::resource('/services', ServiceController::class);
 
