@@ -35,4 +35,8 @@ Route::resource('/clients', ClientController::class);
 Route::resource('/services', ServiceController::class);
 
 
-Route::get("/funcionarios", EmployeeController::class);
+Route::get("/funcionarios/eloquent", [EmployeeController::class, 'eloquent']);
+Route::get("/funcionarios/query-builder", [EmployeeController::class, 'queryBuilder']);
+Route::get("/funcionarios/inclusao", [EmployeeController::class, 'insert']);
+Route::get("/funcionarios/remocao", [EmployeeController::class, 'delete']);
+Route::get("/funcionarios/alteracao", [EmployeeController::class, 'update']);
