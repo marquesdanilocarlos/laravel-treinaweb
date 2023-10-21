@@ -63,6 +63,18 @@ class EmployeeController extends Controller
         dump($employee->save());
     }
 
+    public function mass()
+    {
+        $data = [
+            '_token' => 'aj55kdhf54asiu85',
+            'name' => 'Carmissa',
+            'cpf' => 12345678932,
+            'hiring_date' => '2023-09-25'
+        ];
+
+        dump(Employee::create($data));
+    }
+
     public function delete()
     {
         $employee = Employee::find(3);
