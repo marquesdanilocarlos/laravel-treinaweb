@@ -11,14 +11,12 @@ services:
       - mailcatcher
     restart: always
     volumes:
-      - /var/www/tw-laravel:/var/www/html/
+      - /var/www/laravel-treinaweb/:/var/www/html/
       - './php-ini-overrides.ini:/usr/local/etc/php/conf.d/99-overrides.ini'
-      - './90-xdebug.ini:/usr/local/etc/php/conf.d/90-xdebug.ini'
+      #- './90-xdebug.ini:/usr/local/etc/php/conf.d/90-xdebug.ini'
     container_name: "${PHP_NAME}"
     ports:
         - "8000:80"
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
   mysql:
     image: mysql:${MYSQL_VERSION:-latest}
     restart: always
